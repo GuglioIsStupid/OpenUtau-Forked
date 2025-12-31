@@ -29,18 +29,14 @@
   <Color x:Key="WarningColor">#FFF4CE</Color>
 
   <!--Keyboard Background-->
-  <Color x:Key="WhiteKeyColorLeft">Transparent</Color>
-  <Color x:Key="WhiteKeyColorRight">Transparent</Color>
-  <Color x:Key="WhiteKeyNameColor">#FF347c</Color>
+  <Color x:Key="WhiteKeyColorLeft">#8E33CC</Color>
+  <Color x:Key="WhiteKeyColorRight">#B366FF</Color>
+  <Color x:Key="WhiteKeyNameColor">#FFFFFF</Color>
 
   <Color x:Key="TickLineColor">#BFA0FF</Color>
   <Color x:Key="BarNumberColor">#A890B8</Color>
   <Color x:Key="FinalPitchColor">#C0A0D0</Color>
   <Color x:Key="TrackBackgroundAltColor">#F5F0FA</Color>
-
-  <Color x:Key="WhiteKeyColorLeft">#F0E6FA</Color>
-  <Color x:Key="WhiteKeyColorRight">#E6D6F8</Color>
-  <Color x:Key="WhiteKeyNameColor">#4A1A80</Color>
 
   <Color x:Key="CenterKeyColorLeft">#D8B3FF</Color>
   <Color x:Key="CenterKeyColorRight">#C299FF</Color>

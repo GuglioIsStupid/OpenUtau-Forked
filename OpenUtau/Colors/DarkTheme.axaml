@@ -26,6 +26,12 @@
   <Color x:Key="AccentColor1">#A366FF</Color>
   <Color x:Key="AccentColor2">#FF66D9</Color>
   <Color x:Key="AccentColor3">#F3CDFF</Color>
+  <Color x:Key="TickLineColor">#707070</Color>
+  <Color x:Key="BarNumberColor">#D0D0D0</Color>
+  <Color x:Key="FinalPitchColor">#D0D0D0</Color>
+  <Color x:Key="TrackBackgroundAltColor">#404040</Color>
+  
+  <Color x:Key="WarningColor">#433519</Color>
 
   <Color x:Key="TickLineColor">#7D5BA6</Color>
   <Color x:Key="BarNumberColor">#D0C6E0</Color>

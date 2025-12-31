@@ -39,8 +39,7 @@
       <Setter Property="HorizontalAlignment" Value="Right"/>
     </Style>
   </Window.Styles>
-  <Design.DataContext>
-  </Design.DataContext>
+
   
   <Grid Margin="{Binding $parent.WindowDecorationMargin}" ColumnDefinitions="150,*">
     <ListBox Classes="NoScroll" Name="DrawerList"
@@ -214,6 +213,7 @@
             <ComboBoxItem Content="{DynamicResource prefs.appearance.theme.light}"/>
             <ComboBoxItem Content="{DynamicResource prefs.appearance.theme.dark}"/>
             <ComboBoxItem Content="{DynamicResource prefs.appearance.theme.system}"/>
+            <ComboBoxItem Content="{Binding CustomName}"/>
           </ComboBox>
           <TextBlock Text="{DynamicResource prefs.appearance.degree}" Margin="0,10,0,0"/>
           <ComboBox SelectedIndex="{Binding DegreeStyle}">

@@ -9,7 +9,9 @@ using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using Avalonia.Styling;
 using OpenUtau.App.Views;
+using OpenUtau.Colors;
 using Serilog;
+using System;
 
 namespace OpenUtau.App {
     public class App : Application {
@@ -109,8 +111,10 @@ namespace OpenUtau.App {
 
             var light = (IResourceProvider)Current.Resources["themes-light"]!;
             var dark = (IResourceProvider)Current.Resources["themes-dark"]!;
+            var custom = (IResourceProvider)Current.Resources["themes-custom"]!;
             Current.Resources.MergedDictionaries.Remove(light);
             Current.Resources.MergedDictionaries.Remove(dark);
+            Current.Resources.MergedDictionaries.Remove(custom);
 
             bool useLightTheme = Core.Util.Preferences.Default.Theme == 0;
 
@@ -123,11 +127,22 @@ namespace OpenUtau.App {
             if (useLightTheme) {
                 Current.Resources.MergedDictionaries.Add(light);
                 Current.RequestedThemeVariant = ThemeVariant.Light;
-            } else {
+            } 
+            if (!useLightTheme && Core.Util.Preferences.Default.Theme != 3) {
+                Console.WriteLine("Dark theme applied.");
                 Current.Resources.MergedDictionaries.Add(dark);
                 Current.RequestedThemeVariant = ThemeVariant.Dark;
             }
 
+            if (Core.Util.Preferences.Default.Theme == 3) {
+                Current.Resources.MergedDictionaries.Add(custom);
+                CustomTheme.ApplyTheme();
+                if (CustomTheme.Default.IsDarkMode == true) {
+                    Current.RequestedThemeVariant = ThemeVariant.Dark;
+                } else {
+                    Current.RequestedThemeVariant = ThemeVariant.Light;
+                }
+            }
             ThemeManager.LoadTheme();
         }
     }
